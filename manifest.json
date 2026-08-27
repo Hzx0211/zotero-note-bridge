@@ -1,0 +1,10 @@
+{
+  "id": "zotero-note-bridge",
+  "name": "Zotero Note Bridge",
+  "version": "2.0.0",
+  "minAppVersion": "1.10.0",
+  "description": "Sync Zotero libraries and safely edit child notes through the local API.",
+  "author": "Hzx0211",
+  "authorUrl": "https://github.com/Hzx0211",
+  "isDesktopOnly": true
+}

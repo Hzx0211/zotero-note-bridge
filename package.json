@@ -1,0 +1,35 @@
+{
+  "name": "zotero-note-bridge",
+  "version": "2.0.0",
+  "description": "Local-first Zotero library and child-note bridge for Obsidian",
+  "license": "AGPL-3.0-only",
+  "author": "Hzx0211",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hzx0211/zotero-note-bridge.git"
+  },
+  "homepage": "https://github.com/Hzx0211/zotero-note-bridge#readme",
+  "bugs": {
+    "url": "https://github.com/Hzx0211/zotero-note-bridge/issues"
+  },
+  "scripts": {
+    "build": "node esbuild.mjs",
+    "check": "tsc --noEmit",
+    "test": "node --import tsx --test test/*.test.ts",
+    "scan": "node scripts/check-release.mjs",
+    "audit": "npm audit --audit-level=high",
+    "verify": "npm run check && npm test && npm run build && npm run scan",
+    "install:dev": "node scripts/install-dev.mjs"
+  },
+  "dependencies": {
+    "markdown-it": "^14.1.0"
+  },
+  "devDependencies": {
+    "@types/markdown-it": "^14.1.2",
+    "@types/node": "^24.3.0",
+    "esbuild": "^0.25.9",
+    "obsidian": "^1.8.7",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
+  }
+}

@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Type check, test, build, and scan
+        run: npm run verify
+      - name: Dependency audit
+        run: npm audit --audit-level=high
+      - name: Verify release asset names
+        run: test -s dist/main.js && test -s dist/manifest.json && test -s dist/styles.css
+      - uses: actions/upload-artifact@v4
+        with:
+          name: zotero-note-bridge-${{ github.sha }}
+          path: |
+            dist/main.js
+            dist/manifest.json
+            dist/styles.css

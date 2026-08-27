@@ -1,0 +1,27 @@
+name: Bug report
+description: Report a reproducible Zotero Note Bridge problem without attaching private library data.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: "Do not upload Zotero API keys, Server IDs, private PDFs, a full state.json, or an unredacted Vault."
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      description: Plugin, Obsidian, Zotero, and operating-system versions.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction steps
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true

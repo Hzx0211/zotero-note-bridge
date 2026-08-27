@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.DS_Store
+*.log
+.env
+.env.*
+
+# Never publish private runtime data or Vault content.
+state.json
+library-state.json
+backups/
+References/
+*.pdf
